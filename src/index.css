@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+    --background: #f1f0ec;
+    --primary: #01223f;
+    --muted: #b9bdc2;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-primary: var(--primary);
+    --color-muted: var(--muted);
+    --font-sans: "Poppins", sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --animate-marquee: marquee 30s linear infinite;
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@layer base {
+    body {
+        @apply bg-background text-primary font-sans antialiased;
+    }
+
+    /* Semua link memudar saat hover, kecuali yang override (nav, dropdown) */
+    a {
+        @apply transition-opacity duration-300 hover:opacity-62;
+    }
+}
