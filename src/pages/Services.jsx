@@ -1,5 +1,5 @@
 import ServiceGroup from "@/components/services/ServiceGroup";
-import ClosingPanel from "@/components/ui/ClosingPanel";
+import ClosingPanelLight from "@/components/ui/ClosingPanelLight";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
 import { ammertavServices, inkCreativeServices } from "@/data/services";
@@ -61,8 +61,7 @@ export default function Services() {
 
             <section className="pt-24 md:pt-32.5">
                 <Container>
-                    <ClosingPanel
-                        variant="light"
+                    <ClosingPanelLight
                         title={
                             <>
                                 Not sure which you need?{" "}

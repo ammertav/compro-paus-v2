@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import Container from "./Container";
 import Glow from "./Glow";
-import SectionLabel from "./SectionLabel";
+import SectionLabelPlain from "./SectionLabelPlain";
 
 /**
  * Hero untuk halaman interior: label, judul besar, deskripsi opsional.
@@ -21,7 +21,9 @@ export default function PageHero({
             <Glow position={glow} />
 
             <Container className="relative z-10 pt-20 md:pt-27.5">
-                <SectionLabel className="mb-6.5">{label}</SectionLabel>
+                <SectionLabelPlain className="mb-6.5">
+                    {label}
+                </SectionLabelPlain>
                 <h1
                     className={cn(
                         "max-w-[17em] text-[clamp(38px,5vw,76px)] leading-[1.04] font-light tracking-[-.035em] text-balance",

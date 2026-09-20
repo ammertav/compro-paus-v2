@@ -1,4 +1,4 @@
-import Button from "../ui/Button";
+import ButtonPrimary from "../ui/ButtonPrimary";
 import Container from "../ui/Container";
 import Glow from "../ui/Glow";
 import Heading from "../ui/Heading";
@@ -31,9 +31,9 @@ export default function Bepos() {
                             actually operate.
                         </p>
                         <div className="mt-10">
-                            <Button href="/contact" onDark>
+                            <ButtonPrimary href="/contact" onDark>
                                 Request a walkthrough
-                            </Button>
+                            </ButtonPrimary>
                         </div>
                     </div>
 

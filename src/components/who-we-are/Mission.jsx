@@ -1,13 +1,15 @@
 import Container from "../ui/Container";
 import Heading from "../ui/Heading";
-import SectionLabel from "../ui/SectionLabel";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 import { mission } from "@/data/about";
 
 export default function Mission() {
     return (
         <section className="pt-24 md:pt-32.5">
             <Container>
-                <SectionLabel className="rv mb-6">Our mission</SectionLabel>
+                <SectionLabelPlain className="rv mb-6">
+                    Our mission
+                </SectionLabelPlain>
                 <Heading className="rv mb-16 max-w-[18em] text-[clamp(28px,3.2vw,48px)]">
                     Four commitments we{" "}
                     <span className="font-medium">hold ourselves to</span>.

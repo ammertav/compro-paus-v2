@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-import Button from "../ui/Button";
+import ButtonPrimary from "../ui/ButtonPrimary";
 import Container from "../ui/Container";
-import ListRow from "../ui/ListRow";
+import ListRowPlain from "../ui/ListRowPlain";
 import { brands } from "@/data/brands";
 
 export default function BrandShowcase() {
@@ -39,14 +39,17 @@ export default function BrandShowcase() {
 
                             <div className="border-t border-primary/14">
                                 {brand.offerings.map((offering) => (
-                                    <ListRow key={offering} title={offering} />
+                                    <ListRowPlain
+                                        key={offering}
+                                        title={offering}
+                                    />
                                 ))}
                             </div>
 
                             <div className="mt-8">
-                                <Button href={brand.cta.href} size="md">
+                                <ButtonPrimary href={brand.cta.href} size="md">
                                     {brand.cta.label}
-                                </Button>
+                                </ButtonPrimary>
                             </div>
                         </div>
                     </article>

@@ -40,6 +40,29 @@ public/images/     aset gambar
 | `/services`     | `pages/Services.jsx`   |
 | `/contact`      | `pages/Contact.jsx`    |
 
+## Komponen UI
+
+Setiap variant desain punya file sendiri, jadi tidak ada prop `variant`.
+Pilih satu variant per konteks dan pakai secara konsisten.
+
+| Komponen     | File per variant                                                                         |
+| ------------ | ---------------------------------------------------------------------------------------- |
+| Button       | `ButtonPrimary` · `ButtonSecondary` · `ButtonLink`                                       |
+| SectionLabel | `SectionLabelPlain` · `SectionLabelTag`                                                  |
+| Card         | `CardMedia` · `CardOutlined` · `CardFilled`                                              |
+| Figure       | `FigureRow` · `FigureStacked` · `FigureInline`                                           |
+| ListRow      | `ListRowPlain` · `ListRowNumbered` · `ListRowLinked`                                     |
+| Accordion    | `AccordionDefault` · `AccordionCompact`                                                  |
+| Field        | `FieldText` · `FieldSelect` · `FieldTextarea`                                            |
+| PersonCard   | `PersonCardPortrait` · `PersonCardRow` · `PersonCardNode`                                |
+| ClosingPanel | `ClosingPanelFilled` · `ClosingPanelLight` · `ClosingPanelSplit` · `ClosingPanelMinimal` |
+
+File `*Base`, `*Body`, `*Content`, `*Label`, `*Actions`, dan `*Styles.js`
+adalah bagian dalam yang dipakai bersama antar variant, jangan dipanggil
+langsung dari halaman.
+
+Komponen tanpa variant: `Container`, `Glow`, `Heading`, `PageHero`, `Parallax`.
+
 ## Animasi
 
 `hooks/useReveal.js` dipanggil di setiap halaman. Kontrak markup:

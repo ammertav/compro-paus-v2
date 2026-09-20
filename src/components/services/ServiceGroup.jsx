@@ -1,8 +1,9 @@
 import { cn } from "@/lib/utils";
-import Button from "../ui/Button";
+import ButtonSecondary from "../ui/ButtonSecondary";
 import Container from "../ui/Container";
 import Glow from "../ui/Glow";
-import ListRow from "../ui/ListRow";
+import ListRowLinked from "../ui/ListRowLinked";
+import ListRowNumbered from "../ui/ListRowNumbered";
 
 /**
  * Satu kelompok layanan per brand: intro sticky di kiri,
@@ -50,14 +51,13 @@ export default function ServiceGroup({
                     >
                         {description}
                     </p>
-                    <Button
+                    <ButtonSecondary
                         href="/our-brands"
-                        variant="secondary"
                         size="sm"
                         onDark={onDark}
                     >
                         About the brand
-                    </Button>
+                    </ButtonSecondary>
                 </div>
 
                 <div
@@ -66,18 +66,21 @@ export default function ServiceGroup({
                         onDark ? "border-white/18" : "border-primary/18",
                     )}
                 >
-                    {services.map((service, index) => (
-                        <ListRow
-                            key={service.title}
-                            // Hover row dengan panah hanya ada di latar terang
-                            variant={onDark ? "numbered" : "linked"}
-                            number={startNumber + index}
-                            title={service.title}
-                            onDark={onDark}
-                        >
-                            {service.description}
-                        </ListRow>
-                    ))}
+                    {services.map((service, index) => {
+                        // Hover row dengan panah hanya ada di latar terang
+                        const Row = onDark ? ListRowNumbered : ListRowLinked;
+
+                        return (
+                            <Row
+                                key={service.title}
+                                number={startNumber + index}
+                                title={service.title}
+                                onDark={onDark}
+                            >
+                                {service.description}
+                            </Row>
+                        );
+                    })}
                 </div>
             </Container>
         </section>

@@ -1,12 +1,12 @@
 import Container from "../ui/Container";
-import SectionLabel from "../ui/SectionLabel";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 import { company } from "@/data/company";
 
 export default function Company() {
     return (
         <section className="pt-10">
             <Container className="rv grid items-start gap-10 lg:grid-cols-[200px_minmax(0,1fr)]">
-                <SectionLabel>The company</SectionLabel>
+                <SectionLabelPlain>The company</SectionLabelPlain>
 
                 <div className="grid gap-8 text-[17px] leading-[1.85] text-primary/68 md:grid-cols-2 md:gap-12">
                     <p>

@@ -1,4 +1,4 @@
-import ClosingPanel from "@/components/ui/ClosingPanel";
+import ClosingPanelFilled from "@/components/ui/ClosingPanelFilled";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
 import Parallax from "@/components/ui/Parallax";
@@ -44,7 +44,7 @@ export default function WhoWeAre() {
 
             <section className="pt-24 md:pt-32.5">
                 <Container>
-                    <ClosingPanel
+                    <ClosingPanelFilled
                         glow={false}
                         title={
                             <>

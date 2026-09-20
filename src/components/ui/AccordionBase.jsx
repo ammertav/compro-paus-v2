@@ -2,21 +2,24 @@ import { useId, useState } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * variant: "default" | "compact"
- * items:   [{ question, answer }]
+ * Mesin buka-tutup accordion, dipakai internal oleh varian Accordion.
+ * Jangan dipakai langsung di halaman.
+ *
  * Hanya satu item terbuka dalam satu waktu. Ikon BERGANTI glyph (+ / ×),
  * bukan berotasi, supaya tidak tersangkut di tengah putaran.
  */
-export default function Accordion({
+export default function AccordionBase({
     items = [],
-    variant = "default",
     onDark = false,
     defaultOpen = -1,
     className,
+    headerClassName,
+    questionClassName,
+    iconClassName,
+    answerClassName,
 }) {
     const [openIndex, setOpenIndex] = useState(defaultOpen);
     const id = useId();
-    const isCompact = variant === "compact";
 
     return (
         <div
@@ -47,15 +50,13 @@ export default function Accordion({
                             onClick={() => setOpenIndex(isOpen ? -1 : index)}
                             className={cn(
                                 "flex w-full cursor-pointer items-baseline justify-between gap-6 text-left",
-                                isCompact ? "py-3.25" : "py-7.5 pr-4",
+                                headerClassName,
                             )}
                         >
                             <span
                                 className={cn(
                                     "leading-[1.45]",
-                                    isCompact
-                                        ? "text-[15px]"
-                                        : "text-[clamp(17px,1.6vw,19px)] font-medium",
+                                    questionClassName,
                                 )}
                             >
                                 {item.question}
@@ -64,10 +65,10 @@ export default function Accordion({
                                 aria-hidden="true"
                                 className={cn(
                                     "shrink-0 leading-none",
-                                    isCompact ? "text-[17px]" : "text-[22px]",
                                     onDark
                                         ? "text-white/60"
                                         : "text-primary/74",
+                                    iconClassName,
                                 )}
                             >
                                 {isOpen ? "×" : "+"}
@@ -79,10 +80,10 @@ export default function Accordion({
                                 id={panelId}
                                 className={cn(
                                     "text-base leading-[1.8]",
-                                    isCompact ? "pr-7.5 pb-5.5" : "pr-12 pb-8",
                                     onDark
                                         ? "text-white/66"
                                         : "text-primary/68",
+                                    answerClassName,
                                 )}
                             >
                                 {item.answer}

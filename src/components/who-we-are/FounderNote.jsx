@@ -1,18 +1,18 @@
 import Container from "../ui/Container";
-import PersonCard from "../ui/PersonCard";
-import SectionLabel from "../ui/SectionLabel";
+import PersonCardPortrait from "../ui/PersonCardPortrait";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 
 // Nama, foto, dan isi catatan founder masih placeholder
 export default function FounderNote() {
     return (
         <section id="founder" className="scroll-mt-28 pt-24 md:pt-32.5">
             <Container>
-                <SectionLabel className="rv mb-11">
+                <SectionLabelPlain className="rv mb-11">
                     A note from our founder
-                </SectionLabel>
+                </SectionLabelPlain>
 
                 <div className="rv grid items-start gap-12 md:grid-cols-[minmax(0,.6fr)_minmax(0,1fr)] md:gap-16">
-                    <PersonCard
+                    <PersonCardPortrait
                         name="[ Name ]"
                         role="Founder"
                         placeholder="Portrait placeholder"

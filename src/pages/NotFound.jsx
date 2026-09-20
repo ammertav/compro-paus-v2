@@ -1,4 +1,4 @@
-import Button from "@/components/ui/Button";
+import ButtonPrimary from "@/components/ui/ButtonPrimary";
 import PageHero from "@/components/ui/PageHero";
 
 export default function NotFound() {
@@ -17,7 +17,7 @@ export default function NotFound() {
                 description="The link may be broken, or the page may have moved."
             >
                 <div className="mt-10">
-                    <Button href="/">Back to home</Button>
+                    <ButtonPrimary href="/">Back to home</ButtonPrimary>
                 </div>
             </PageHero>
         </>

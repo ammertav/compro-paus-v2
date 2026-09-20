@@ -1,9 +1,9 @@
-import Button from "../ui/Button";
-import Card from "../ui/Card";
+import ButtonPrimary from "../ui/ButtonPrimary";
+import CardOutlined from "../ui/CardOutlined";
 import Container from "../ui/Container";
 import Glow from "../ui/Glow";
 import Heading from "../ui/Heading";
-import SectionLabel from "../ui/SectionLabel";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 import { products } from "@/data/brands";
 
 export default function Products() {
@@ -12,9 +12,9 @@ export default function Products() {
             <Glow position="bottom-left" onDark />
 
             <Container className="relative z-10">
-                <SectionLabel onDark className="rv mb-6">
+                <SectionLabelPlain onDark className="rv mb-6">
                     Products
-                </SectionLabel>
+                </SectionLabelPlain>
                 <Heading className="rv mb-5 max-w-[18em] text-[clamp(28px,3.2vw,50px)]">
                     Built in-house by Ammertav,{" "}
                     <span className="font-medium">starting with BePOS</span>.
@@ -27,21 +27,21 @@ export default function Products() {
 
                 <div className="rv grid gap-6.5 md:grid-cols-3">
                     {products.map((product) => (
-                        <Card
+                        <CardOutlined
                             key={product.name}
                             onDark
                             eyebrow={product.status}
                             title={product.name}
                         >
                             {product.description}
-                        </Card>
+                        </CardOutlined>
                     ))}
                 </div>
 
                 <div className="mt-12">
-                    <Button href="/how-it-works#bepos" onDark>
+                    <ButtonPrimary href="/how-it-works#bepos" onDark>
                         See BePOS in detail
-                    </Button>
+                    </ButtonPrimary>
                 </div>
             </Container>
         </section>

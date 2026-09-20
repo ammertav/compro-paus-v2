@@ -6,7 +6,7 @@ import Hero from "@/components/home/Hero";
 import OurBrands from "@/components/home/OurBrands";
 import Process from "@/components/home/Process";
 import Stats from "@/components/home/Stats";
-import ClosingPanel from "@/components/ui/ClosingPanel";
+import ClosingPanelFilled from "@/components/ui/ClosingPanelFilled";
 import Container from "@/components/ui/Container";
 import { company } from "@/data/company";
 import useReveal from "@/hooks/useReveal";
@@ -29,7 +29,7 @@ export default function Home() {
 
             <section className="pt-24 md:pt-35">
                 <Container>
-                    <ClosingPanel
+                    <ClosingPanelFilled
                         title={
                             <>
                                 Let&apos;s build{" "}
@@ -50,7 +50,7 @@ export default function Home() {
                     >
                         Tell us where the business is now, and we&apos;ll map
                         what it needs next.
-                    </ClosingPanel>
+                    </ClosingPanelFilled>
                 </Container>
             </section>
         </>

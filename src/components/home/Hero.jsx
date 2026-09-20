@@ -1,8 +1,9 @@
-import Button from "../ui/Button";
+import ButtonPrimary from "../ui/ButtonPrimary";
+import ButtonSecondary from "../ui/ButtonSecondary";
 import Container from "../ui/Container";
 import Glow from "../ui/Glow";
 import Parallax from "../ui/Parallax";
-import SectionLabel from "../ui/SectionLabel";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 import { company } from "@/data/company";
 
 export default function Hero() {
@@ -12,7 +13,9 @@ export default function Hero() {
             <Glow position="bottom-left" />
 
             <Container className="relative z-20 pt-20 text-center md:pt-27.5">
-                <SectionLabel className="mb-7">{company.tagline}</SectionLabel>
+                <SectionLabelPlain className="mb-7">
+                    {company.tagline}
+                </SectionLabelPlain>
                 <h1 className="mx-auto max-w-[17em] text-[clamp(40px,5.4vw,82px)] leading-[1.03] font-light tracking-[-.035em] text-balance">
                     We build what business runs on, and the{" "}
                     <span className="font-medium">story it runs with</span>.
@@ -23,10 +26,12 @@ export default function Hero() {
                     that lasts.
                 </p>
                 <div className="mt-10.5 flex flex-wrap justify-center gap-3.5">
-                    <Button href="/contact">Start a project</Button>
-                    <Button href="/how-it-works" variant="secondary">
+                    <ButtonPrimary href="/contact">
+                        Start a project
+                    </ButtonPrimary>
+                    <ButtonSecondary href="/how-it-works">
                         How it works
-                    </Button>
+                    </ButtonSecondary>
                 </div>
             </Container>
 

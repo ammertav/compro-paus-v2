@@ -1,5 +1,5 @@
 import Container from "../ui/Container";
-import ListRow from "../ui/ListRow";
+import ListRowPlain from "../ui/ListRowPlain";
 import Parallax from "../ui/Parallax";
 import { processSteps } from "@/data/process";
 
@@ -26,7 +26,7 @@ export default function Steps() {
 
                                 <div className="border-t border-primary/14">
                                     {step.points.map((point) => (
-                                        <ListRow
+                                        <ListRowPlain
                                             key={point}
                                             title={point}
                                             className="py-3.5"

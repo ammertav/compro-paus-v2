@@ -1,6 +1,6 @@
 import Bepos from "@/components/how-it-works/Bepos";
 import Steps from "@/components/how-it-works/Steps";
-import ClosingPanel from "@/components/ui/ClosingPanel";
+import ClosingPanelLight from "@/components/ui/ClosingPanelLight";
 import Container from "@/components/ui/Container";
 import PageHero from "@/components/ui/PageHero";
 import useReveal from "@/hooks/useReveal";
@@ -32,8 +32,7 @@ export default function HowItWorks() {
 
             <section className="pt-24 md:pt-32.5">
                 <Container>
-                    <ClosingPanel
-                        variant="light"
+                    <ClosingPanelLight
                         title={
                             <>
                                 Start with a{" "}

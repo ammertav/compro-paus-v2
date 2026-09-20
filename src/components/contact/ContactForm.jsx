@@ -1,6 +1,9 @@
 import { useState } from "react";
-import Button from "../ui/Button";
-import Field from "../ui/Field";
+import ButtonPrimary from "../ui/ButtonPrimary";
+import ButtonSecondary from "../ui/ButtonSecondary";
+import FieldSelect from "../ui/FieldSelect";
+import FieldText from "../ui/FieldText";
+import FieldTextarea from "../ui/FieldTextarea";
 import { enquiryOptions } from "@/data/contact";
 
 const INITIAL_FORM = {
@@ -45,9 +48,9 @@ export default function ContactForm() {
                     A member of the team replies within one working day. This is
                     a prototype, so nothing was actually transmitted.
                 </p>
-                <Button variant="secondary" size="sm" onClick={handleReset}>
+                <ButtonSecondary size="sm" onClick={handleReset}>
                     Send another
-                </Button>
+                </ButtonSecondary>
             </div>
         );
     }
@@ -55,7 +58,7 @@ export default function ContactForm() {
     return (
         <form onSubmit={handleSubmit}>
             <div className="grid gap-5.5 sm:grid-cols-2">
-                <Field
+                <FieldText
                     label="Name"
                     name="name"
                     placeholder="Your name"
@@ -63,14 +66,14 @@ export default function ContactForm() {
                     onChange={handleChange}
                     required
                 />
-                <Field
+                <FieldText
                     label="Company"
                     name="company"
                     placeholder="Company name"
                     value={form.company}
                     onChange={handleChange}
                 />
-                <Field
+                <FieldText
                     label="Email"
                     name="email"
                     type="email"
@@ -79,7 +82,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     required
                 />
-                <Field
+                <FieldText
                     label="Phone"
                     name="phone"
                     type="tel"
@@ -89,8 +92,7 @@ export default function ContactForm() {
                 />
             </div>
 
-            <Field
-                variant="select"
+            <FieldSelect
                 label="What do you need?"
                 name="need"
                 options={enquiryOptions}
@@ -98,8 +100,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 className="mt-5.5"
             />
-            <Field
-                variant="textarea"
+            <FieldTextarea
                 label="Message"
                 name="message"
                 rows={5}
@@ -109,9 +110,12 @@ export default function ContactForm() {
                 className="mt-5.5"
             />
 
-            <Button type="submit" className="mt-7 w-full py-4.5 text-[15px]">
+            <ButtonPrimary
+                type="submit"
+                className="mt-7 w-full py-4.5 text-[15px]"
+            >
                 Send message
-            </Button>
+            </ButtonPrimary>
             <p className="mt-4.5 text-[13px] leading-[1.6] text-primary/74">
                 We guarantee the confidentiality of anything you share with us.
             </p>

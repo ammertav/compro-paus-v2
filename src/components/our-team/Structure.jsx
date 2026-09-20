@@ -1,8 +1,8 @@
 import Container from "../ui/Container";
 import Glow from "../ui/Glow";
 import Heading from "../ui/Heading";
-import PersonCard from "../ui/PersonCard";
-import SectionLabel from "../ui/SectionLabel";
+import PersonCardNode from "../ui/PersonCardNode";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 import { company } from "@/data/company";
 import { units } from "@/data/about";
 
@@ -17,9 +17,9 @@ export default function Structure() {
             <Glow position="top-right" onDark />
 
             <Container className="relative z-10">
-                <SectionLabel onDark className="rv mb-6">
+                <SectionLabelPlain onDark className="rv mb-6">
                     Organisation structure
-                </SectionLabel>
+                </SectionLabelPlain>
                 <Heading className="rv mb-19 max-w-[18em] text-[clamp(28px,3.2vw,50px)]">
                     How the group{" "}
                     <span className="font-medium">is organised</span>.
@@ -27,16 +27,14 @@ export default function Structure() {
 
                 {/* Bagan organisasi */}
                 <div className="rv flex flex-col items-center">
-                    <PersonCard
-                        variant="node"
+                    <PersonCardNode
                         onDark
                         name="Board of Commissioners"
                         role="Oversight"
                         className="w-full sm:w-auto sm:min-w-75"
                     />
                     <Connector />
-                    <PersonCard
-                        variant="node"
+                    <PersonCardNode
                         onDark
                         filled
                         name="Board of Directors"
@@ -60,8 +58,7 @@ export default function Structure() {
                                             : "block h-11 w-px bg-white/30"
                                     }
                                 />
-                                <PersonCard
-                                    variant="node"
+                                <PersonCardNode
                                     onDark
                                     name={unit.name}
                                     role={unit.note}

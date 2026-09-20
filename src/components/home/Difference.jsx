@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import Container from "../ui/Container";
 import Heading from "../ui/Heading";
-import SectionLabel from "../ui/SectionLabel";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 import { comparison } from "@/data/home";
 
 // Mobile: label satu baris penuh, dua kolom perbandingan di bawahnya
@@ -12,7 +12,9 @@ export default function Difference() {
     return (
         <section className="pt-24 md:pt-35">
             <Container>
-                <SectionLabel className="rv mb-6">The difference</SectionLabel>
+                <SectionLabelPlain className="rv mb-6">
+                    The difference
+                </SectionLabelPlain>
                 <Heading className="rv mb-14 max-w-[20em]">
                     What working with us{" "}
                     <span className="font-medium">actually changes</span>.

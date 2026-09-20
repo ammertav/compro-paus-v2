@@ -1,7 +1,7 @@
 import Container from "../ui/Container";
 import Glow from "../ui/Glow";
 import Heading from "../ui/Heading";
-import SectionLabel from "../ui/SectionLabel";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 
 export default function Vision() {
     return (
@@ -9,9 +9,9 @@ export default function Vision() {
             <Glow position="bottom-left" onDark />
 
             <Container className="relative z-10">
-                <SectionLabel onDark className="rv mb-7.5">
+                <SectionLabelPlain onDark className="rv mb-7.5">
                     Our vision
-                </SectionLabel>
+                </SectionLabelPlain>
                 <Heading className="rv max-w-[26em] text-[clamp(28px,3.5vw,56px)] leading-[1.12]">
                     To become Indonesia&apos;s{" "}
                     <span className="font-medium">leading conglomerate</span>,

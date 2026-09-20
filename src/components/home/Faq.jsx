@@ -1,8 +1,8 @@
 import { Link } from "react-router";
-import Accordion from "../ui/Accordion";
+import AccordionDefault from "../ui/AccordionDefault";
 import Container from "../ui/Container";
 import Heading from "../ui/Heading";
-import SectionLabel from "../ui/SectionLabel";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 import { faqs } from "@/data/faqs";
 
 export default function Faq() {
@@ -10,7 +10,9 @@ export default function Faq() {
         <section id="faq" className="scroll-mt-28 pt-24 md:pt-35">
             <Container className="grid items-start gap-12 lg:grid-cols-[minmax(0,.55fr)_minmax(0,1fr)] lg:gap-16">
                 <div className="lg:sticky lg:top-30">
-                    <SectionLabel className="rv mb-6">FAQ</SectionLabel>
+                    <SectionLabelPlain className="rv mb-6">
+                        FAQ
+                    </SectionLabelPlain>
                     <Heading className="rv mb-5.5 text-[clamp(28px,3.2vw,48px)]">
                         Questions,
                         <br />
@@ -25,7 +27,7 @@ export default function Faq() {
                     </p>
                 </div>
 
-                <Accordion items={faqs} className="rv" />
+                <AccordionDefault items={faqs} className="rv" />
             </Container>
         </section>
     );

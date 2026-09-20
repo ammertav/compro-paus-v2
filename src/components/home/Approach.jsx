@@ -1,13 +1,15 @@
 import Container from "../ui/Container";
 import Heading from "../ui/Heading";
-import SectionLabel from "../ui/SectionLabel";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 import { pillars } from "@/data/home";
 
 export default function Approach() {
     return (
         <section className="pt-24 md:pt-35">
             <Container>
-                <SectionLabel className="rv mb-6">Our approach</SectionLabel>
+                <SectionLabelPlain className="rv mb-6">
+                    Our approach
+                </SectionLabelPlain>
                 <Heading className="rv max-w-[22em]">
                     Meeting the business{" "}
                     <span className="font-medium">where it already is</span>.

@@ -1,8 +1,8 @@
-import Card from "../ui/Card";
+import CardMedia from "../ui/CardMedia";
 import Container from "../ui/Container";
 import Glow from "../ui/Glow";
 import Heading from "../ui/Heading";
-import SectionLabel from "../ui/SectionLabel";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 import { brands } from "@/data/brands";
 
 export default function OurBrands() {
@@ -12,7 +12,9 @@ export default function OurBrands() {
                 <Glow position="top-left" />
 
                 <div className="relative z-10">
-                    <SectionLabel className="rv mb-6">Our brands</SectionLabel>
+                    <SectionLabelPlain className="rv mb-6">
+                        Our brands
+                    </SectionLabelPlain>
                     <Heading className="rv mb-16 max-w-[20em]">
                         One group.{" "}
                         <span className="font-medium">
@@ -23,9 +25,8 @@ export default function OurBrands() {
 
                     <div className="rv-stagger grid gap-8 md:grid-cols-2">
                         {brands.map((brand) => (
-                            <Card
+                            <CardMedia
                                 key={brand.name}
-                                variant="media"
                                 href="/our-brands"
                                 image={brand.logo}
                                 imageAlt={brand.name}
@@ -35,7 +36,7 @@ export default function OurBrands() {
                                 className="rv"
                             >
                                 {brand.summary}
-                            </Card>
+                            </CardMedia>
                         ))}
                     </div>
                 </div>

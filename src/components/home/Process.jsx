@@ -1,8 +1,8 @@
-import Button from "../ui/Button";
+import ButtonPrimary from "../ui/ButtonPrimary";
 import Container from "../ui/Container";
 import Glow from "../ui/Glow";
 import Heading from "../ui/Heading";
-import SectionLabel from "../ui/SectionLabel";
+import SectionLabelPlain from "../ui/SectionLabelPlain";
 import { processSteps } from "@/data/process";
 
 export default function Process() {
@@ -11,9 +11,9 @@ export default function Process() {
             <Glow position="top-right" onDark />
 
             <Container className="relative z-10">
-                <SectionLabel onDark className="rv mb-6">
+                <SectionLabelPlain onDark className="rv mb-6">
                     How it works
-                </SectionLabel>
+                </SectionLabelPlain>
                 <Heading className="rv mb-5 max-w-[20em]">
                     From first conversation to{" "}
                     <span className="font-medium">a system in production</span>.
@@ -43,9 +43,9 @@ export default function Process() {
                 </div>
 
                 <div className="mt-14">
-                    <Button href="/how-it-works" onDark>
+                    <ButtonPrimary href="/how-it-works" onDark>
                         See the full process
-                    </Button>
+                    </ButtonPrimary>
                 </div>
             </Container>
         </section>
