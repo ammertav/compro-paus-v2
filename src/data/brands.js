@@ -1,12 +1,13 @@
+import { products } from "./products";
+
 export const brands = [
     {
         name: "Ammertav",
         category: "IT Solutions",
+        // White logo, shown on a navy tile over the photo
         logo: "/images/brand-ammertav.webp",
-        // Logo berwarna putih, jadi butuh latar navy
-        isDarkLogoBg: true,
-        summary:
-            "Integrated technology solutions that raise operational effectiveness and business efficiency.",
+        // [ Placeholder photo ]
+        image: "https://picsum.photos/seed/paus-b-ammertav/1400/1600",
         description:
             "Integrated technology solutions that raise operational effectiveness and business efficiency, from customer-facing pages to the internal systems a company runs on.",
         offerings: [
@@ -15,54 +16,36 @@ export const brands = [
             "Company profile platforms",
             "Internal system web applications",
         ],
-        cta: { label: "Ammertav services", href: "/services#ammertav" },
+        cta: { label: "Explore Ammertav →", href: "/business/ammertav" },
     },
     {
         name: "INK.Creative",
         category: "Creative & Digital",
+        // Dark logo, shown on bone
         logo: "/images/brand-ink-creative.webp",
-        // Logo sudah punya plate putih, jadi latarnya putih
-        isDarkLogoBg: false,
-        summary:
-            "Helping brands build an identity that is strong, consistent, and relevant in digital, through creative and strategic work.",
+        image: "/images/image-about.webp",
         description:
-            "Helping brands build an identity that is strong, consistent, and relevant in digital, through creative and strategic work rather than decoration.",
+            "Helping brands build an identity that is strong, consistent, and relevant in digital, through **creative and strategic work** rather than decoration.",
         offerings: [
             "Company profile and brand platforms",
             "Personal branding programmes",
             "Content and visual strategy",
             "Digital communication direction",
         ],
-        cta: { label: "INK.Creative services", href: "/services#ink" },
+        cta: {
+            label: "Explore INK.Creative →",
+            href: "/business/ink-creative",
+        },
     },
 ];
 
-export const products = [
-    {
-        status: "Live",
-        name: "BePOS",
-        description:
-            "Real-time point of sale with integrated inventory and one dashboard for multi-branch management.",
-    },
-    {
-        status: "Placeholder",
-        name: "Product 02",
-        description:
-            "Send us the details for the second Ammertav product and we'll write this block properly.",
-    },
-    {
-        status: "Placeholder",
-        name: "Product 03",
-        description:
-            "Same for the third: name, problem it solves, and who it's for.",
-    },
-];
+// Home's BePOS block. Name, tagline and features come from products.js
+const [beposProduct] = products.items;
 
-export const marqueeItems = [
-    "Ammertav",
-    "INK.Creative",
-    "BePOS",
-    "Point of Sale",
-    "Web & Mobile",
-    "Branding",
-];
+export const bepos = {
+    label: `Product · ${beposProduct.status}`,
+    title: `**${beposProduct.name}**, ${beposProduct.tagline}`,
+    // [ Placeholder photo ]
+    image: "https://picsum.photos/seed/paus-b-bepos/2000/1000",
+    features: beposProduct.features,
+};

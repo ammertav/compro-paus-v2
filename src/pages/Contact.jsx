@@ -1,32 +1,23 @@
-import Enquiry from "@/components/contact/Enquiry";
-import Faq from "@/components/contact/Faq";
-import PageHero from "@/components/ui/PageHero";
-import useReveal from "@/hooks/useReveal";
+import Office from "@/components/contact/Office";
+import TopicPicker from "@/components/contact/TopicPicker";
+import PageHero from "@/components/layout/PageHero";
+import { contactHero } from "@/data/contact";
+import { contact } from "@/data/home";
 
 export default function Contact() {
-    useReveal();
-
     return (
         <>
-            <title>Contact Us | PAUS</title>
-
+            <title>Contact | PAUS</title>
             <PageHero
-                label="Contact Us"
-                title={
-                    <>
-                        Let&apos;s build{" "}
-                        <span className="font-medium">
-                            something that lasts
-                        </span>
-                        .
-                    </>
-                }
-                description="Tell us where the business is now and we'll map what it needs next. We reply to every enquiry directly."
-                titleClassName="max-w-[15em]"
+                image={contactHero.image}
+                label={contact.label}
+                title={contact.title}
+                titleClassName="max-w-[10em] text-cta"
+                description={contact.description}
+                className="min-h-[max(560px,72vh)]"
             />
-
-            <Enquiry />
-            <Faq />
+            <TopicPicker />
+            <Office />
         </>
     );
 }

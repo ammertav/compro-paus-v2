@@ -1,13 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import RootLayout from "@/components/layout/RootLayout";
+import About from "@/pages/About";
+import Ammertav from "@/pages/Ammertav";
+import Career from "@/pages/Career";
 import Contact from "@/pages/Contact";
 import Home from "@/pages/Home";
-import HowItWorks from "@/pages/HowItWorks";
+import InkCreative from "@/pages/InkCreative";
 import NotFound from "@/pages/NotFound";
-import OurBrands from "@/pages/OurBrands";
-import OurTeam from "@/pages/OurTeam";
-import Services from "@/pages/Services";
-import WhoWeAre from "@/pages/WhoWeAre";
 
 const router = createBrowserRouter([
     {
@@ -15,11 +14,10 @@ const router = createBrowserRouter([
         element: <RootLayout />,
         children: [
             { index: true, element: <Home /> },
-            { path: "who-we-are", element: <WhoWeAre /> },
-            { path: "our-team", element: <OurTeam /> },
-            { path: "our-brands", element: <OurBrands /> },
-            { path: "how-it-works", element: <HowItWorks /> },
-            { path: "services", element: <Services /> },
+            { path: "about", element: <About /> },
+            { path: "business/ammertav", element: <Ammertav /> },
+            { path: "business/ink-creative", element: <InkCreative /> },
+            { path: "career", element: <Career /> },
             { path: "contact", element: <Contact /> },
             { path: "*", element: <NotFound /> },
         ],

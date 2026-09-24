@@ -1,33 +1,52 @@
-export const aboutLinks = [
-    { label: "Who We Are", href: "/who-we-are" },
-    { label: "Our Team", href: "/our-team" },
-    { label: "A note from our founder", href: "/who-we-are#founder" },
+export const businessLinks = [
+    {
+        label: "Ammertav",
+        description: "IT Solutions",
+        href: "/business/ammertav",
+    },
+    {
+        label: "INK.Creative",
+        description: "Creative & Digital",
+        href: "/business/ink-creative",
+    },
 ];
 
+// An item with `children` renders as the Business dropdown
 export const navLinks = [
-    { label: "How It Works", href: "/how-it-works" },
-    { label: "Services", href: "/services" },
-    { label: "Our Brands", href: "/our-brands" },
-    { label: "FAQ", href: "/contact#faq" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Business", children: businessLinks },
+    { label: "Career", href: "/career" },
+    { label: "Contact", href: "/contact" },
 ];
+
+export const navLabels = {
+    whatsapp: "Chat on WhatsApp",
+    menu: "Menu",
+    close: "Close",
+};
 
 export const footerColumns = [
     {
         heading: "Company",
         links: [
-            { label: "Who We Are", href: "/who-we-are" },
-            { label: "Our Team", href: "/our-team" },
-            { label: "Our Brands", href: "/our-brands" },
-            { label: "How It Works", href: "/how-it-works" },
+            { label: "Home", href: "/" },
+            { label: "About", href: "/about" },
+            { label: "Career", href: "/career" },
+            { label: "Contact", href: "/contact" },
         ],
     },
-    {
-        heading: "Services",
-        links: [
-            { label: "Ammertav", href: "/services#ammertav" },
-            { label: "INK.Creative", href: "/services#ink" },
-            { label: "BePOS", href: "/how-it-works#bepos" },
-            { label: "FAQ", href: "/contact#faq" },
-        ],
-    },
+    { heading: "Business", links: businessLinks },
+];
+
+export const footerLabels = {
+    contact: "Contact",
+    follow: "Follow",
+};
+
+// [ Placeholder URLs and handles: replace with the real profiles ]
+export const socialLinks = [
+    { label: "Instagram", handle: "[ @handle ]", href: "#" },
+    { label: "LinkedIn", handle: "[ company page ]", href: "#" },
+    { label: "TikTok", handle: "[ @handle ]", href: "#" },
 ];

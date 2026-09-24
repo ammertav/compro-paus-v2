@@ -1,24 +1,20 @@
-import ButtonPrimary from "@/components/ui/ButtonPrimary";
-import PageHero from "@/components/ui/PageHero";
+import PageHero from "@/components/layout/PageHero";
+import TextLink from "@/components/ui/TextLink";
+import { notFound } from "@/data/notFound";
 
 export default function NotFound() {
     return (
         <>
             <title>Page not found | PAUS</title>
-
             <PageHero
-                label="404"
-                title={
-                    <>
-                        This page{" "}
-                        <span className="font-medium">doesn&apos;t exist</span>.
-                    </>
-                }
-                description="The link may be broken, or the page may have moved."
+                label={notFound.label}
+                title={notFound.title}
+                description={notFound.description}
+                className="min-h-[max(560px,72vh)]"
             >
-                <div className="mt-10">
-                    <ButtonPrimary href="/">Back to home</ButtonPrimary>
-                </div>
+                <TextLink href={notFound.link.href}>
+                    {notFound.link.label}
+                </TextLink>
             </PageHero>
         </>
     );

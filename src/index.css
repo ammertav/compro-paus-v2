@@ -1,36 +1,114 @@
 @import "tailwindcss";
 
-:root {
-    --background: #f1f0ec;
-    --primary: #01223f;
-    --muted: #b9bdc2;
-}
-
-@theme inline {
-    --color-background: var(--background);
-    --color-primary: var(--primary);
-    --color-muted: var(--muted);
-    --font-sans: "Poppins", sans-serif;
+@theme {
+    --color-navy: #01223f;
+    --color-navy-deep: #032a4b;
+    --color-bone: #f1f0ec;
+    --color-bone-dim: #e4e2dc;
+    --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-    --animate-marquee: marquee 30s linear infinite;
+    --default-transition-timing-function: var(--ease-out-expo);
+    --radius-*: initial;
 
-    @keyframes marquee {
+    /* Layout */
+    --container-page: 1440px;
+    --spacing-gutter: clamp(20px, 4vw, 56px);
+    --spacing-section: clamp(104px, 12vw, 168px);
+    --spacing-section-sm: clamp(64px, 8vw, 104px);
+    --spacing-nav: 76px;
+    --spacing-wide: clamp(40px, 6vw, 96px);
+    --spacing-stack: clamp(80px, 10vw, 144px);
+
+    /* Type */
+    --text-label: 15px;
+    --text-lead: clamp(18px, 1.5vw, 22px);
+    --text-lead--line-height: 1.55;
+    --text-display: clamp(44px, 6.8vw, 112px);
+    --text-display--line-height: 0.98;
+    --text-display--letter-spacing: -0.04em;
+    --text-display--font-weight: 300;
+    --text-title: clamp(40px, 6vw, 100px);
+    --text-title--line-height: 1;
+    --text-title--letter-spacing: -0.04em;
+    --text-title--font-weight: 300;
+    --text-cta: clamp(48px, 7.4vw, 124px);
+    --text-cta--line-height: 0.96;
+    --text-cta--letter-spacing: -0.045em;
+    --text-cta--font-weight: 300;
+    --text-h2: clamp(32px, 4.4vw, 68px);
+    --text-h2--line-height: 1.04;
+    --text-h2--letter-spacing: -0.035em;
+    --text-h2--font-weight: 300;
+    --text-h2-sm: clamp(32px, 4vw, 60px);
+    --text-h2-sm--line-height: 1.04;
+    --text-h2-sm--letter-spacing: -0.035em;
+    --text-h2-sm--font-weight: 300;
+    --text-statement: clamp(28px, 3.8vw, 60px);
+    --text-statement--line-height: 1.14;
+    --text-statement--letter-spacing: -0.03em;
+    --text-statement--font-weight: 300;
+    --text-stat: clamp(72px, 9vw, 152px);
+    --text-stat--line-height: 0.9;
+    --text-stat--letter-spacing: -0.05em;
+    --text-stat--font-weight: 300;
+
+    /* Motion: animate-enter fades a card in from 24px below */
+    --animate-enter: enter 0.9s var(--ease-out-expo) both;
+
+    @keyframes enter {
         from {
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(-50%);
+            opacity: 0;
+            transform: translateY(24px);
         }
     }
+}
+
+/* Photos are shown in grayscale with a touch of contrast */
+@utility photo-mono {
+    filter: grayscale(1) contrast(1.05);
 }
 
 @layer base {
+    html,
     body {
-        @apply bg-background text-primary font-sans antialiased;
+        background-color: var(--color-navy);
     }
 
-    /* Semua link memudar saat hover, kecuali yang override (nav, dropdown) */
+    /* The design uses the browser default line-height; preflight sets 1.5 */
+    html {
+        line-height: normal;
+    }
+
+    body {
+        color: #fff;
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* Headlines run at 300; one phrase in <strong> lifts to 500 */
+    strong {
+        font-weight: 500;
+    }
+
+    h1 {
+        text-wrap: balance;
+    }
+
     a {
-        @apply transition-opacity duration-300 hover:opacity-62;
+        transition: opacity 0.4s var(--ease-out-expo);
+    }
+
+    a:hover {
+        opacity: 0.62;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    :focus-visible {
+        outline: 1px solid currentColor;
+        outline-offset: 4px;
     }
 }

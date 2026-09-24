@@ -1,58 +1,29 @@
-import Approach from "@/components/home/Approach";
-import BrandMarquee from "@/components/home/BrandMarquee";
-import Difference from "@/components/home/Difference";
-import Faq from "@/components/home/Faq";
+import BrandSplit from "@/components/home/BrandSplit";
+import Bepos from "@/components/home/Bepos";
+import CareerTeaser from "@/components/home/CareerTeaser";
+import Clients from "@/components/home/Clients";
+import ContactRows from "@/components/home/ContactRows";
+import HandsMeet from "@/components/home/HandsMeet";
 import Hero from "@/components/home/Hero";
-import OurBrands from "@/components/home/OurBrands";
-import Process from "@/components/home/Process";
+import ProcessCarousel from "@/components/home/ProcessCarousel";
 import Stats from "@/components/home/Stats";
-import ClosingPanelFilled from "@/components/ui/ClosingPanelFilled";
-import Container from "@/components/ui/Container";
-import { company } from "@/data/company";
-import useReveal from "@/hooks/useReveal";
+import WhoWeAre from "@/components/home/WhoWeAre";
 
 export default function Home() {
-    useReveal();
-
     return (
         <>
-            <title>PAUS | IT Solutions & Creative Digital Agency</title>
-
             <Hero />
-            <BrandMarquee />
-            <Approach />
-            <OurBrands />
-            <Difference />
-            <Process />
-            <Stats />
-            <Faq />
-
-            <section className="pt-24 md:pt-35">
-                <Container>
-                    <ClosingPanelFilled
-                        title={
-                            <>
-                                Let&apos;s build{" "}
-                                <span className="font-medium">
-                                    something that lasts
-                                </span>
-                                .
-                            </>
-                        }
-                        actions={[
-                            { label: "Connect with us", href: "/contact" },
-                            {
-                                label: company.email,
-                                href: `mailto:${company.email}`,
-                                variant: "secondary",
-                            },
-                        ]}
-                    >
-                        Tell us where the business is now, and we&apos;ll map
-                        what it needs next.
-                    </ClosingPanelFilled>
-                </Container>
+            <WhoWeAre />
+            <HandsMeet />
+            <BrandSplit />
+            <Bepos />
+            <section className="bg-bone py-section text-navy">
+                <ProcessCarousel />
+                <Stats />
+                <Clients />
             </section>
+            <CareerTeaser />
+            <ContactRows />
         </>
     );
 }
