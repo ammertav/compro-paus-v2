@@ -7,7 +7,7 @@ import Container from "./Container";
 export default function Footer() {
     return (
         <footer className="border-t border-white/12 bg-navy pt-20 pb-10">
-            <Container className="grid gap-10 text-label leading-relaxed sm:grid-cols-2 lg:grid-cols-5">
+            <Container className="grid gap-10 text-label leading-relaxed sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                 <div className="flex flex-col gap-6">
                     <img
                         src="/images/logo-paus-black.webp"

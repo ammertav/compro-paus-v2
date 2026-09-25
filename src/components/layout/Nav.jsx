@@ -97,6 +97,7 @@ export default function Nav() {
                                 >
                                     {item.label}
                                     <span
+                                        aria-hidden="true"
                                         className={cn(
                                             "text-[11px] transition-transform duration-600",
                                             dropOpen && "rotate-180",

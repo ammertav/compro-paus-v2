@@ -9,7 +9,7 @@ export default function WhoWeAre() {
     return (
         <section className="pt-[clamp(104px,14vw,200px)] pb-[clamp(64px,8vw,120px)]">
             <Container>
-                <Reveal as="p" className="mb-10 text-label text-white/76">
+                <Reveal as="h2" className="mb-10 text-label text-white/76">
                     {whoWeAre.label}
                 </Reveal>
                 <Reveal

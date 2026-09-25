@@ -93,37 +93,41 @@ export default function ProcessCarousel() {
                 </Reveal>
             </Container>
 
-            <div
-                ref={trackRef}
-                className="relative mt-16 flex snap-x snap-mandatory scroll-pl-gutter gap-[clamp(16px,2vw,32px)] overflow-x-auto px-gutter [scrollbar-width:none] motion-safe:scroll-smooth"
-            >
-                {howItWorks.steps.map((step, i) => (
-                    <Reveal
-                        as="article"
-                        key={step.title}
-                        delay={i * 110}
-                        className="w-[min(80vw,440px)] shrink-0 snap-start"
-                    >
-                        <div className="relative aspect-4/5 overflow-hidden bg-navy">
-                            <img
-                                src={step.image}
-                                alt=""
-                                loading="lazy"
-                                className="photo-mono size-full object-cover opacity-85 transition duration-1400 hover:scale-105 hover:opacity-100"
-                            />
-                            <span className="absolute top-4 left-5 text-[56px] leading-none font-light tracking-[-.04em] text-white">
-                                {formatIndex(i)}
-                            </span>
-                        </div>
-                        <h3 className="mt-6 mb-3 text-2xl font-medium tracking-[-.015em]">
-                            {step.title}
-                        </h3>
-                        <p className="max-w-[24em] leading-relaxed text-navy/68">
-                            {step.summary}
-                        </p>
-                    </Reveal>
-                ))}
-            </div>
+            {/* One Reveal for the whole track: cards scrolled off to the right
+                would never trigger their own */}
+            <Reveal className="mt-16">
+                <div
+                    ref={trackRef}
+                    tabIndex={0}
+                    aria-label={howItWorks.label}
+                    className="relative flex snap-x snap-mandatory scroll-pl-gutter gap-[clamp(16px,2vw,32px)] overflow-x-auto px-gutter [scrollbar-width:none] motion-safe:scroll-smooth"
+                >
+                    {howItWorks.steps.map((step, i) => (
+                        <article
+                            key={step.title}
+                            className="w-[min(80vw,440px)] shrink-0 snap-start"
+                        >
+                            <div className="relative aspect-4/5 overflow-hidden bg-navy">
+                                <img
+                                    src={step.image}
+                                    alt=""
+                                    loading="lazy"
+                                    className="photo-mono size-full object-cover opacity-85 transition duration-1400 hover:scale-105 hover:opacity-100"
+                                />
+                                <span className="absolute top-4 left-5 text-[56px] leading-none font-light tracking-[-.04em] text-white">
+                                    {formatIndex(i)}
+                                </span>
+                            </div>
+                            <h3 className="mt-6 mb-3 text-2xl font-medium tracking-[-.015em]">
+                                {step.title}
+                            </h3>
+                            <p className="max-w-[24em] leading-relaxed text-navy/68">
+                                {step.summary}
+                            </p>
+                        </article>
+                    ))}
+                </div>
+            </Reveal>
 
             <Container className="mt-10 grid grid-cols-4 gap-2">
                 {howItWorks.steps.map((step, i) => (
@@ -141,7 +145,7 @@ export default function ProcessCarousel() {
                         </span>
                         <span
                             className={cn(
-                                "flex items-baseline gap-2.5 text-sm transition-opacity duration-600",
+                                "flex flex-wrap items-baseline gap-x-2.5 text-sm transition-opacity duration-600",
                                 visible[i] <= 0.5 && "opacity-50",
                             )}
                         >
